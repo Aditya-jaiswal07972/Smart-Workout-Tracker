@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fitness Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .chart-box { margin-bottom: 40px; }
+        .back-link {
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 16px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>📊 Hello, Fitness Enthusiast!</h2>
+
+    <!-- ✅ Back Button -->
+    <a href="http://localhost:3000/pages/profile" class="back-link">🏠 Back to Main Page</a>
+
+    <div id="user-charts">Loading your analytics...</div>
+
+    <script>
+        const username = "{{ username }}";
+
+        async function loadUserAnalytics() {
+            const chartContainer = document.getElementById("user-charts");
+            chartContainer.innerHTML = "";
+
+            const res = await fetch(`/user_sessions/${username}`);
+            const { sessions } = await res.json();
+
+            if (!sessions.length) {
+                chartContainer.innerHTML = "<p>❌ No session data available.</p>";
+                return;
+            }
+
+            const exercises = {};
+            const labels = [];
+
+            sessions.forEach((session, i) => {
+                labels.push(`Session ${i + 1}`);
+                for (let [key, val] of Object.entries(session)) {
+                    if (key !== "Session Duration") {
+                        exercises[key] = exercises[key] || [];
+                        exercises[key].push(val);
+                    }
+                }
+            });
+
+            const traces = Object.entries(exercises).map(([exercise, values]) => ({
+                x: labels,
+                y: values,
+                name: exercise,
+                type: 'bar'
+            }));
+
+            const chartDiv = document.createElement("div");
+            chartDiv.className = "chart-box";
+            chartContainer.appendChild(chartDiv);
+
+            Plotly.newPlot(chartDiv, traces, {
+                title: `Exercise Analytics`,
+                barmode: 'group',
+                yaxis: { title: 'Repetitions' }
+            });
+        }
+
+        loadUserAnalytics();
+    </script>
+</body>
+</html>

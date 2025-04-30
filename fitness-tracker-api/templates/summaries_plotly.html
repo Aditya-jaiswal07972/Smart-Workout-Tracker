@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📈 Plotly Exercise Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .chart-box { margin-bottom: 50px; }
+    </style>
+</head>
+<body>
+    <h1>📊 User Exercise Summaries (Interactive)</h1>
+    <div id="charts"></div>
+
+    <script>
+        async function loadData() {
+            const res = await fetch("/all_sessions");
+            const data = await res.json();
+            const chartContainer = document.getElementById("charts");
+
+            Object.entries(data).forEach(([username, sessions], index) => {
+                const exercises = {};
+                const labels = [];
+
+                sessions.forEach((session, i) => {
+                    labels.push(`Session ${i + 1}`);
+                    for (let [key, val] of Object.entries(session)) {
+                        if (key !== "Session Duration") {
+                            exercises[key] = exercises[key] || [];
+                            exercises[key].push(val);
+                        }
+                    }
+                });
+
+                const traces = Object.entries(exercises).map(([exercise, values]) => ({
+                    x: labels,
+                    y: values,
+                    name: exercise,
+                    type: 'bar'
+                }));
+
+                const divId = `plot-${index}`;
+                const chartDiv = document.createElement("div");
+                chartDiv.id = divId;
+                chartDiv.className = "chart-box";
+                chartContainer.appendChild(chartDiv);
+
+                Plotly.newPlot(divId, traces, {
+                    title: `User: ${username}`,
+                    barmode: 'group',
+                    yaxis: { title: 'Repetitions' }
+                });
+            });
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

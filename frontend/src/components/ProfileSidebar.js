@@ -1,10 +1,12 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import "./Profile.css";
 
 const ProfileSidebar = () => {
   const location = useLocation();
+  const { userInfo } = useSelector((state) => state.auth);
 
   return (
     <ListGroup className="sidenav">
@@ -60,7 +62,7 @@ const ProfileSidebar = () => {
 
       <ListGroup.Item
         as={Link}
-        to="https://exercise-ml.streamlit.app/"
+        to={`http://localhost:8501/?id=${userInfo._id}&name=${userInfo.name}`}
         active={location.pathname === "/pages/diet"}
         className="wrapper"
 
@@ -68,6 +70,16 @@ const ProfileSidebar = () => {
         Reps Count
       </ListGroup.Item>
 
+      <ListGroup.Item
+        as={Link}
+        to={`http://localhost:8000/dashboard/${userInfo._id}`}
+        active={location.pathname === "/pages/diet"}
+        className="wrapper"
+
+      >
+        Fitness Dashboard
+      </ListGroup.Item>
+      
     </ListGroup>
   );
 };
