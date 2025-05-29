@@ -97,51 +97,66 @@ async function runChat(userInput) {
     {
 		  role: "model",
 		  parts: [
-			{text: "Hi, Welcome to Fuel &FitPRO, how may i help you??\n"},
+			{text: "Hi, Welcome to SmartRep, how may i help you??\n"},
 		  ],
 		},
 
         {
             role: "user",
             parts: [
-              {text: "what is UrbanAthlete \n"},
+              {text: "what is SmartRep \n"},
             ],
           },
 
     {
 		  role: "model",
 		  parts: [
-			{text: "Fuel &FitPRO is a comprehensive fitness solution designed to help users achieve their health goals efficiently.\nIt offers a Personal Account feature, allowing users to create and manage their profiles, track progress, and receive personalized recommendations.\nThe Diet Profile enables users to input their dietary preferences, restrictions, and fitness objectives to generate customized meal plans.\n With Goal Settings, users can set specific fitness goals, whether it's weight loss, muscle gain, or maintaining a healthy lifestyle. \n The Meal Planner provides daily and weekly meal suggestions based on the user’s dietary needs, ensuring balanced nutrition.To promote hydration, the Water Intake Log helps users monitor their daily water consumption and sends reminders to stay hydrated.\n Our Workout Database includes a vast collection of exercises categorized by muscle groups, difficulty levels, and fitness goals.\n The Nutrition Checker allows users to scan or manually enter food items to receive detailed nutritional insights, including calorie count, macronutrient distribution, and health benefits. \n Additionally, the Supplement Recommendation feature suggests vitamins, proteins, and other supplements based on the user's fitness requirements and deficiencies.\nA key highlight of our system is the AI Chatbot, which acts as a virtual fitness assistant, answering user queries, providing workout guidance, and offering diet suggestions based on real-time user data.\n The Exercise Tracking with Pose Estimation feature, powered by MediaPipe, ensures users perform exercises with the correct form by analyzing body posture and providing real-time feedback.\n The BMR (Basal Metabolic Rate) Calculator helps users determine their daily calorie needs based on age, gender, weight, and activity level, providing essential insights into energy expenditure.By integrating AI-powered recommendations with real-time tracking and monitoring, our system creates a holistic and personalized fitness experience, ensuring users stay on track with their health and fitness journey.\n"},
+			{text: "SmartRep is a comprehensive fitness solution designed to help users achieve their health goals efficiently.\nIt offers a Personal Account feature, allowing users to create and manage their profiles, track progress, and receive personalized recommendations.\nThe Diet Profile enables users to input their dietary preferences, restrictions, and fitness objectives to generate customized meal plans.\n With Goal Settings, users can set specific fitness goals, whether it's weight loss, muscle gain, or maintaining a healthy lifestyle. \n The Meal Planner provides daily and weekly meal suggestions based on the user’s dietary needs, ensuring balanced nutrition.To promote hydration, the Water Intake Log helps users monitor their daily water consumption and sends reminders to stay hydrated.\n Our Workout Database includes a vast collection of exercises categorized by muscle groups, difficulty levels, and fitness goals.\n The Nutrition Checker allows users to scan or manually enter food items to receive detailed nutritional insights, including calorie count, macronutrient distribution, and health benefits. \n Additionally, the Supplement Recommendation feature suggests vitamins, proteins, and other supplements based on the user's fitness requirements and deficiencies.\nA key highlight of our system is the AI Chatbot, which acts as a virtual fitness assistant, answering user queries, providing workout guidance, and offering diet suggestions based on real-time user data.\n The Exercise Tracking with Pose Estimation feature, powered by MediaPipe, ensures users perform exercises with the correct form by analyzing body posture and providing real-time feedback.\n The BMR (Basal Metabolic Rate) Calculator helps users determine their daily calorie needs based on age, gender, weight, and activity level, providing essential insights into energy expenditure.By integrating AI-powered recommendations with real-time tracking and monitoring, our system creates a holistic and personalized fitness experience, ensuring users stay on track with their health and fitness journey.\n"},
 		  ],
 		},
 
       {
         role: "user",
         parts: [
-          { text: "does Fuel &FitPRO recommends diets to users" },
+          { text: "does SmartRep recommends diets to users" },
         ],
         },
   
         {
           role: "model",
           parts: [
-          {text: "Yes, Fuel &FitPRO provides a diet recommendation system that provides users diets according to their goals\n"},
+          {text: "Yes, SmartRep provides a diet recommendation system that provides users diets according to their goals\n"},
           ],
         },
 
         {
             role: "user",
             parts: [
-              { text: "does Fuel &FitPRO has any features which provides detailed nutritional informations of food items" },
+              { text: "does SmartRep has any features which provides detailed nutritional informations of food items" },
             ],
             },
       
             {
               role: "model",
               parts: [
-              {text: "Yes the Fuel &FitPRO has provides a features from where user can get a detailed nutritional information of food items searched \n"},
+              {text: "Yes the SmartRep has provides a features from where user can get a detailed nutritional information of food items searched \n"},
               ],
             },
+
+		{
+            role: "user",
+            parts: [
+              { text: "can i access exercise/workout feature without login? " },
+            ],
+            },
+      
+            {
+              role: "model",
+              parts: [
+              {text: "No, only logged in users have access to exercise/workout feature and persnalised dashboard. but you can use BRM, Nutrition check of food items and features offered without login. \n"},
+              ],
+            },
+	
 	
 	  ],
 	});

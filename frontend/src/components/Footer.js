@@ -17,7 +17,7 @@ const Footer = () => {
         <Row className="align-items-center">
           {/* Logo Section */}
           <Col md={4} className="text-center text-md-start mb-3 mb-md-0">
-            <h4 className="text-uppercase fw-bold">Fuel & FitPRO</h4>
+            <h4 className="text-uppercase fw-bold">SmartRep</h4>
             <p className="mb-0">We tranform your personality not body</p>
           </Col>
 
@@ -65,8 +65,8 @@ const Footer = () => {
 
           {/* Contact Details */}
           <Col md={4} className="text-center text-md-end">
-            <p className="mb-0">© 2024 Fuel & FitPRO, Inc.</p>
-            <p className="mb-0">support@urbanathlete.com | +123 456 7890</p>
+            <p className="mb-0">© 2024 SmartRep, Inc.</p>
+            <p className="mb-0"><a href="mailto:aditya@gmail.com">support@smartrep.com</a> | +123 456 7890</p>
           </Col>
         </Row>
       </Container>

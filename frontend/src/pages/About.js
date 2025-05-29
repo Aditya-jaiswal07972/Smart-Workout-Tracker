@@ -8,13 +8,13 @@ const AboutUs = () => {
       <Container>
         <Row className="justify-content-md-center">
           <Col md="auto">
-            <h1>About Fuel & FitPRO</h1>
+            <h1>About SmartRep</h1>
           </Col>
         </Row>
         <Row>
           <Col>
             <p>
-            Fuel &FitPRO is a fitness web app that helps people reach their
+            SmartRep is a fitness web app that helps people reach their
               fitness goals. It provides users with a variety of tools and
               resources, including:
             </p>

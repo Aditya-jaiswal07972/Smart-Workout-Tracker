@@ -9,7 +9,7 @@ import { logout } from "../slices/authSlice";
 import { toast } from "react-toastify";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Logo from "../assets/images/urban.jpg";
+import Logo from "../assets/images/urban.png";
 import "./Header.css"; // Importing the CSS file
 
 const Header = () => {

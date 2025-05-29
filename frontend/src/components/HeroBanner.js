@@ -17,7 +17,7 @@ const HeroBanner = () => {
       position="relative"
       p="20px"
     >
-      {/* Fuel & FitPRO Header */}
+      {/* SmartRep Header */}
       <Typography
         id="urban-athlete"
         className="typewriter"
@@ -27,7 +27,7 @@ const HeroBanner = () => {
         pb="20px"
         sx={{ textAlign: 'left' }} // Align text to the left
       >
-        Fuel & FitPRO
+        SmartRep
       </Typography>
 
       {/* Supporting Text */}

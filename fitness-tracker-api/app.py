@@ -172,12 +172,10 @@ if start and username and selected:
         st.markdown(f'<a href="http://localhost:8000/dashboard/{username}?name={name}" target="_self" style="text-decoration: none; font-size: 18px;">🔗 View Your Dashboard</a>',unsafe_allow_html=True)
         # st.markdown(f'<a href="http://localhost:8000/dashboard/{username}?name={name}" target="_self" style="text-decoration: none; font-size: 18px;">🔗 View Your Dashboard</a>', unsafe_allow_html=True)
 
-        # Show back to main page only if the username came from query param (i.e., MERN app user)
         if {name} != 'None':
             st.markdown('<a href="http://localhost:3000/pages/profile" target="_self" style="text-decoration: none; font-size: 18px;">🏠 Back to Main Page</a>', unsafe_allow_html=True)
 
 
-        # Optionally post to backend
         try:
             res = requests.post("http://127.0.0.1:8000/start_session", json={
                 "username": username,
