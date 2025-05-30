@@ -1,1 +1,1 @@
-"# fitness-app" 
+"# Smart Workout Tracker" 
