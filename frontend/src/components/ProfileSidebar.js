@@ -26,7 +26,7 @@ const ProfileSidebar = () => {
         className="wrapper"
 
       >
-        Update Diet Profile
+        Fitness Tracking Profile
       </ListGroup.Item>
 
       <ListGroup.Item

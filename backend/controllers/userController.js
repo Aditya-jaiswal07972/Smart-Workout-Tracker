@@ -55,7 +55,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc        Logout a new user
+// @desc        Logout a user
 // route        POST /api/users/logout
 // @access      Public
 const logoutUser = asyncHandler(async (req, res) => {

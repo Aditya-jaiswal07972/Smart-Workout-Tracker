@@ -16,10 +16,7 @@ import cors from "cors"
 import mongoose from "mongoose";
 import otpGenerator from 'otp-generator';
 import nodemailer from 'nodemailer';
-
-
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai';
-
 
 connectDB();
 
@@ -80,7 +77,7 @@ async function runChat(userInput) {
 		category: HarmCategory.HARM_CATEGORY_HARASSMENT,
 		threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
 	  },
-	  // ... other safety settings
+	  // ... = safety settings
 	];
   
 	const chat = model.startChat({
@@ -141,6 +138,20 @@ async function runChat(userInput) {
               parts: [
               {text: "Yes the SmartRep has provides a features from where user can get a detailed nutritional information of food items searched \n"},
               ],
+            },
+			
+        {
+			  role: "user",
+			  parts: [
+		      { text: "does SmartRep count my reps automatically?" },
+			  ],
+},
+
+		{
+			  role: "model",
+			  parts: [
+		      { text: "Yes, SmartRep tracks your body movement using pose detection and automatically counts exercise repetitions during your workout sessions.\n" },
+			  ],
             },
 
 		{

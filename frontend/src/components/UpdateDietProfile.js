@@ -139,7 +139,7 @@ const UpdateDietProfile = () => {
         <Col md={8}>
           <Card className="p-4 shadow-lg" style={{ borderRadius: "15px", backgroundColor: "#f8f9fa" }}>
             <h2 className="text-center mb-4">
-              Update Diet Profile
+              Fitness Tracking Profile
             </h2>
             <Form onSubmit={submitHandler}>
               <Form.Group className="mb-3" controlId="height">
