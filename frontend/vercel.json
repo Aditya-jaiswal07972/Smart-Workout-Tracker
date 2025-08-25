@@ -1,6 +1,6 @@
 {
     "rewrites": [
-        { "source": "/api/(.*)", "destination": "https://shape-up-api.miguelemmara.me/api/$1" }
+        { "source": "/api/(.*)", "destination": "https://smart-workout-tracker.vercel.app//api/$1" }
     ]
   }
   
