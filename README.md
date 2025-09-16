@@ -1,6 +1,6 @@
 # 🏋️‍♂️ Smart Workout Tracker
 
-> *Because counting reps in your head is so 2010.*
+> *Because counting reps in your head is so 2010.* 
 
 Smart Workout Tracker is your personal digital gym buddy 💪. It combines a sleek **React frontend**, a powerful **Node.js/Express backend**, and some AI magic with **OpenCV + MediaPipe** for pose tracking. Add in **real-time analytics with Streamlit** and **secure user authentication (JWT)**, and you’ve got the perfect recipe for interactive workout management.
 
